@@ -34,6 +34,15 @@ export const projects = [
         imageUrl: "/images/game-server-cluster.jpg", // Replace with your actual image path
         liveDemoUrl: "#", // Replace with your actual URL, if available
         githubUrl: "#" // Replace with your actual URL, if available
+    },
+    {
+        id: 4,
+        title: "SignalApp - Video and Network Performance Analyzer",
+        description: "Easily analyze and optimize your video and network performance with one click",
+        techStack: ["Python", "Matplotlib", "Pandas", "Numpy"],
+        imageUrl: "/images/signalapp.png", // Replace with your actual image path
+        liveDemoUrl: "#", // Replace with your actual URL, if available
+        githubUrl: "#" // Replace with your actual URL, if available
     }
 ,
     // Add more projects here
