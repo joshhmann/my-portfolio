@@ -44,9 +44,7 @@
   <h1>Welcome to My Portfolio</h1>
   <p>I'm Josh Anderson, a Support Engineer. Let's build something great together</p>
   <div class="links-container">
-    <!-- Update href with your actual resume link -->
     <a href="/documents/resume.pdf" target="_blank">Resume</a>
-    <!-- Update href with your actual LinkedIn profile link -->
     <a href="https://www.linkedin.com/in/joshua-frederick-anderson/" target="_blank">LinkedIn</a>
   </div>
 </div>
