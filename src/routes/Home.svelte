@@ -44,7 +44,7 @@
   <h1>Welcome to My Portfolio</h1>
   <p>I'm Josh Anderson, a Support Engineer. Let's build something great together</p>
   <div class="links-container">
-    <a href="/documents/resume.pdf" target="_blank">Resume</a>
+    <a href="https://docsend.com/view/jbdiuvsit559f9d6" target="_blank">Resume</a>
     <a href="https://www.linkedin.com/in/joshua-frederick-anderson/" target="_blank">LinkedIn</a>
   </div>
 </div>

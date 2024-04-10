@@ -31,7 +31,7 @@ export const projects = [
         title: "Game Server Cluster Deployment (In Progress)",
         description: "Automating Minecraft server deployment with Ansible and Terraform for Kubernetes. Implementing Prometheus and Grafana for real-time performance monitoring.",
         techStack: ["Ansible", "Terraform", "Kubernetes", "Prometheus/Grafana"],
-        imageUrl: "/images/game-server-cluster.jpg", // Replace with your actual image path
+        imageUrl: "/images/pterodactyl.png", // Replace with your actual image path
         liveDemoUrl: "#", // Replace with your actual URL, if available
         githubUrl: "#" // Replace with your actual URL, if available
     },
@@ -43,7 +43,15 @@ export const projects = [
         imageUrl: "/images/signalapp.png", // Replace with your actual image path
         liveDemoUrl: "#", // Replace with your actual URL, if available
         githubUrl: "#" // Replace with your actual URL, if available
-    }
-,
+    },
+    {
+        id: 5,
+        title: "Gemini Bot for Discord - Leveraging Google's Gemini API for Conversational AI in Discord Channels",
+        description: "An interactive Discord bot using JavaScript and Node.js, integrating Google's Gemini API to enable rich, conversational experiences within Discord channels",
+        techStack: ["Javascript", "discord.js", "Node.js", "Google Gemini API"],
+        imageUrl: "/images/bingbot.png", // Replace with your actual image path
+        liveDemoUrl: "#", // Replace with your actual URL, if available
+        githubUrl: "#" // Replace with your actual URL, if available
+    },
     // Add more projects here
 ];
