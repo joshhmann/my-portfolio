@@ -62,6 +62,7 @@
     {/each}
   </ul>
   
+  
   <h3>Interests</h3>
   <ul class="interests-list">
     {#each interests as interest}
@@ -69,7 +70,11 @@
     {/each}
   </ul>
   
+  <a href="https://roadmap.sh"><img src="https://roadmap.sh/card/tall/66941471298168c109f2f398?variant=dark" alt="roadmap.sh"/></a>
+
   <h2>Education</h2>
   <p>Bloc.io - Software Developer Track, 2016-2019</p>
   <p>Self Study - DevOps, 2023 - Present</p>
+
+  
 </div>
