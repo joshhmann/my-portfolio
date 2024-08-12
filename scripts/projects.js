@@ -1,7 +1,7 @@
 export const projects = [
     {
         id: 1,
-        title: "CS-Butler - JavaScript Slackbot for Streamlined Support",
+        title: "CS-Butler - JavaScript Slackbot for Streamlined Support (Internal Tool)",
         description: "Developed a Slack app for automated support, improving team coordination and workflow efficiency using JavaScript, Slack API, JIRA API, and Opsgenie API.",
         techStack: ["JavaScript", "Slack API", "JIRA API", "Opsgenie API"],
         imageUrl: "/images/csbutler.jpg", // Replace with your actual image path
@@ -28,9 +28,9 @@ export const projects = [
     },
     {
         id: 4,
-        title: "Game Server Cluster Deployment (In Progress)",
-        description: "Automating Minecraft server deployment with Ansible and Terraform for Kubernetes. Implementing Prometheus and Grafana for real-time performance monitoring.",
-        techStack: ["Ansible", "Terraform", "Kubernetes", "Prometheus/Grafana"],
+        title: "Game Server Deployment",
+        description: "Automating Minecraft server deployment using Proxmox, Ansible, Terraform, and Pterodactyl. Implementing Prometheus and Grafana for real-time performance monitoring.",
+        techStack: ["Ansible", "Terraform", "Kubernetes", "Prometheus/Grafana", "Open Source", "Pterodactyl"],
         imageUrl: "/images/pterodactyl.png", // Replace with your actual image path
         liveDemoUrl: "#", // Replace with your actual URL, if available
         githubUrl: "#" // Replace with your actual URL, if available

@@ -1,71 +1,94 @@
 <script>
-  import { link } from 'svelte-spa-router';
   let active = false;
 
   function toggleMenu() {
     active = !active;
   }
-  export let activeSection;
+
+  function scrollToSection(sectionId) {
+    document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+  }
 </script>
 
 <style>
+ /* Navbar container styling */
 .navbar {
-  display: flex;
-  justify-content: flex-end; /* Align items to the right */
-  align-items: center;
   position: sticky;
   top: 0;
-  z-index: 100;
-  padding: 0 20px; /* Add some padding on the sides */
+  width: 100%;
+  background-color: #222831; /* Dark background for contrast */
+  padding: 10px 20px;
+  z-index: 1000; /* Ensure it stays above other content */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
+/* Menu icon styling */
 .menu-icon {
-  display: none; /* Hide menu icon by default */
+  display: none;
   cursor: pointer;
+  font-size: 24px;
+  color: #ddd;
+}
+
+/* Navigation links styling */
+nav {
+  display: flex;
+  gap: 20px;
 }
 
 .nav-link {
-  padding: 10px 15px; /* Spacing around links for easier clickability */
+  color: #ddd;
   text-decoration: none;
-  color: #fff; /* White text color for dark mode */
-  margin-left: 10px; /* Space between links */
-  border-bottom: 2px solid transparent; /* Invisible border for layout consistency */
-  transition: border-color 0.3s; /* Smooth transition for the underline */
+  padding: 10px 15px;
+  font-weight: bold;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s, color 0.3s;
 }
 
-.nav-link:hover, .nav-link.active {
-  border-bottom: 2px solid #fff; /* Underline for hover and active states */
+.nav-link:hover {
+  border-bottom: 2px solid #00adb5; /* Underline effect on hover */
+  color: #00adb5; /* Change color on hover */
 }
 
-/* Toggle visibility on small screens */
+/* Mobile-friendly adjustments */
 @media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start; /* Align items to the left on small screens */
+  .menu-icon {
+    display: block; /* Show the menu icon on small screens */
   }
 
-  .menu-icon {
-    display: block; /* Show menu icon */
-    padding: 10px 15px; /* Ensure clickable area */
-    margin-left: auto; /* Align menu icon to the right */
+  nav {
+    display: none; /* Hide the nav links by default */
+    flex-direction: column;
+    gap: 10px;
+    background-color: #222831;
+    position: absolute;
+    top: 50px; /* Position just below the navbar */
+    left: 0;
+    width: 100%;
+    padding: 20px;
+  }
+
+  nav.active {
+    display: flex; /* Show the nav links when active */
   }
 
   .nav-link {
-    display: none; /* Hide links initially */
-  }
-
-  .navbar.responsive .nav-link {
-    display: block; /* Show links when menu is toggled */
-    margin: 10px 0; /* Adjust spacing for vertical layout */
+    padding: 10px 0; /* Adjust padding for mobile view */
+    text-align: center;
   }
 }
+
 </style>
 
-<div class="navbar" class:responsive={active}>
-  <a href="/" use:link class="nav-link" class:active={activeSection === 'home'}>Home</a>
-  <a href="/about" use:link class="nav-link" class:active={activeSection === 'about'}>About Me</a>
-  <a href="/projects" use:link class="nav-link" class:active={activeSection === 'projects'}>Projects</a>
-  <a href="/contact" use:link class="nav-link" class:active={activeSection === 'contact'}>Contact</a>
+<div class="navbar">
   <span class="menu-icon" on:click={toggleMenu}>&#9776;</span>
+  <nav class:active={active}>
+    <a on:click={() => scrollToSection('home')} class="nav-link">Home</a>
+    <a on:click={() => scrollToSection('about')} class="nav-link">About Me</a>
+    <a on:click={() => scrollToSection('projects')} class="nav-link">Projects</a>
+    <a on:click={() => scrollToSection('contact')} class="nav-link">Contact</a>
+  </nav>
 </div>
 
