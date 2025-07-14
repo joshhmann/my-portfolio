@@ -36,7 +36,7 @@ export const projects = [
         githubUrl: "#" // Replace with your actual URL, if available
     },
     {
-        id: 4,
+        id: 5,
         title: "SignalApp - Video and Network Performance Analyzer",
         description: "Easily analyze and optimize your video and network performance with one click",
         techStack: ["Python", "Matplotlib", "Pandas", "Numpy"],
@@ -45,7 +45,7 @@ export const projects = [
         githubUrl: "#" // Replace with your actual URL, if available
     },
     {
-        id: 5,
+        id: 6,
         title: "Gemini Bot for Discord - Leveraging Google's Gemini API for Conversational AI in Discord Channels",
         description: "An interactive Discord bot using JavaScript and Node.js, integrating Google's Gemini API to enable rich, conversational experiences within Discord channels",
         techStack: ["Javascript", "discord.js", "Node.js", "Google Gemini API"],

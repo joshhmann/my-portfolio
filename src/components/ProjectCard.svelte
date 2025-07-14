@@ -92,13 +92,15 @@ a:hover {
 
 <div class="project-card">
   <img src={imageUrl} alt={title} />
-  <h3>{title}</h3>
-  <p>{description}</p>
-  <ul>
-    {#each techStack as tech}
-      <li>{tech}</li>
-    {/each}
-  </ul>
+  <div class="project-content">
+    <h3>{title}</h3>
+    <p>{description}</p>
+    <ul>
+      {#each techStack as tech}
+        <li>{tech}</li>
+      {/each}
+    </ul>
+  </div>
   <div class="links">
     {#if liveDemoUrl}<a href={liveDemoUrl} target="_blank">Live Demo</a>{/if}
     {#if caseStudyUrl}<a href={caseStudyUrl} target="_blank">Case Study</a>{/if}

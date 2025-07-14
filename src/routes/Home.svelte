@@ -1,52 +1,7 @@
 <script>
   import ProjectCard from '../components/ProjectCard.svelte';
   import { projects } from '../../scripts/projects.js'; // Adjust the path as necessary
-
-const skills = {
-  softwareDevelopment: [
-    "Python", "JavaScript", "HTML", "CSS", "APIs", "Postman", "VSCode", "JSON"
-  ],
-  roboticsAutomation: [
-    "Maintenance", "Diagnostics", "Troubleshooting", "Configuration"
-  ],
-  hardwareNetworking: [
-    "Replacement", "Network Configuration", "Firewalls", "IP Networking", "WiFi Networking", "GPU Acceleration"
-  ],
-  systemAdministration: [
-    "Linux Administration", "Docker", "Unix/Linux OS configuration and optimization", "Bash"
-  ],
-  devOpsCI: [
-    "GitHub", "Git", "Kubernetes", "Docker", "AWS", "Ansible", "Terraform", "GitHub Actions"
-  ],
-  cloudSaaS: [
-    "Google Cloud", "Cloud Applications", "SaaS"
-  ],
-  projectManagement: [
-    "Jira", "Confluence", "Account Management"
-  ],
-  dataManagement: [
-    "SQL", "GraphQL", "Prometheus", "Grafana"
-  ],
-  problemSolving: [
-    "Customer Support", "Team Collaboration", "24/7 on-call support", "Communication Skills"
-  ],
-  softSkills: [
-    "Communication",         // Clear and effective communication with customers and team members
-    "Active Listening",       // Understanding customer issues and needs
-    "Problem-Solving",        // Finding and implementing solutions to technical issues
-    "Adaptability",           // Adjusting to new tools, technologies, or processes
-    "Time Management",        // Managing and prioritizing multiple tasks efficiently
-    "Team Collaboration",     // Working effectively with colleagues and other departments
-    "Attention to Detail",    // Ensuring accuracy in troubleshooting and documentation
-    "Empathy",                // Understanding and being patient with customer frustrations
-    "Critical Thinking",      // Analyzing problems and thinking logically to resolve them
-    "Resilience"              // Maintaining composure under pressure and in challenging situations
-  ],
-};
-
-
-
-  const interests = ["DevOps Automation", "Robotics", "Homelabs", "Game servers", "3D Printing", "Game Development"];
+  import { skills, interests } from '../../scripts/data.js';
 
   // Contact form logic
   let name = '';
@@ -331,7 +286,7 @@ button {
   <h1>Josh Anderson</h1>
   <p>I'm Josh Anderson, a Support Engineer. Let's build something great together.</p>
   <div class="links-container">
-    <button><a href="https://docsend.com/v/wbm9q/resume" target="_blank">Resume</a></button>
+    <button><a href="https://docsend.com/view/e7vqfjre5bn652vu" target="_blank">Resume</a></button>
     <button><a href="https://www.linkedin.com/in/joshua-frederick-anderson/" target="_blank">LinkedIn</a></button>
   </div>
 </section>
@@ -347,7 +302,18 @@ button {
   <p>Dynamic Technical Support Engineer with over 6 years of experience in Jira, Confluence, fleet health management, and robotics. Proficient in deploying and maintaining complex systems, scripting, and data analysis. Adept at collaborating with engineering, product, and design teams to implement innovative solutions. Committed to enhancing operational efficiency and customer satisfaction through automation and continuous improvement. Experienced in end-to-end project management, machine learning model optimization, and integrating user feedback to drive improvements.</p>
   
   <h2>Companies I've Worked For</h2>
+
+    <div class="experience">
+    <div class="experience-details">
+      <h3>Meta via Qualitest</h3>
+      <img src="/images/meta-logo.png" alt="meta logo" class="logo">
+      <img src="/images/qualitest-logo.png" alt="qualitest logo" class="logo">
+      <p>Fremont, CA | 10/2024 - Present</p>
+      <p>Provide end-to-end support for cutting-edge capture systems across Meta Reality Labs, ensuring operational readiness for user studies and advanced research initiatives.</p>
+    </div>
+  </div>
   
+
   <div class="experience">
     <div class="experience-details">
       <h3>Phantom Auto - Support Engineer</h3>
@@ -368,95 +334,16 @@ button {
   
   <h3>Skills</h3>
 <div class="skills-section">
-  <div class="skills-category">
-    <h4>Software Development</h4>
-    <ul class="skills-list">
-      {#each skills.softwareDevelopment as skill}
-        <li>{skill}</li>
-      {/each}
-    </ul>
-  </div>
-
-  <div class="skills-category">
-    <h4>Robotics & Automation</h4>
-    <ul class="skills-list">
-      {#each skills.roboticsAutomation as skill}
-        <li>{skill}</li>
-      {/each}
-    </ul>
-  </div>
-
-  <div class="skills-category">
-    <h4>Hardware & Networking</h4>
-    <ul class="skills-list">
-      {#each skills.hardwareNetworking as skill}
-        <li>{skill}</li>
-      {/each}
-    </ul>
-  </div>
-
-  <div class="skills-category">
-    <h4>System Administration</h4>
-    <ul class="skills-list">
-      {#each skills.systemAdministration as skill}
-        <li>{skill}</li>
-      {/each}
-    </ul>
-  </div>
-
-  <div class="skills-category">
-    <h4>DevOps & CI/CD</h4>
-    <ul class="skills-list">
-      {#each skills.devOpsCI as skill}
-        <li>{skill}</li>
-      {/each}
-    </ul>
-  </div>
-
-  <div class="skills-category">
-    <h4>Cloud & SaaS</h4>
-    <ul class="skills-list">
-      {#each skills.cloudSaaS as skill}
-        <li>{skill}</li>
-      {/each}
-    </ul>
-  </div>
-
-  <div class="skills-category">
-    <h4>Project Management & Documentation</h4>
-    <ul class="skills-list">
-      {#each skills.projectManagement as skill}
-        <li>{skill}</li>
-      {/each}
-    </ul>
-  </div>
-
-  <div class="skills-category">
-    <h4>Data Management & Monitoring</h4>
-    <ul class="skills-list">
-      {#each skills.dataManagement as skill}
-        <li>{skill}</li>
-      {/each}
-    </ul>
-  </div>
-
-  <div class="skills-category">
-    <h4>Problem-Solving & Support</h4>
-    <ul class="skills-list">
-      {#each skills.problemSolving as skill}
-        <li>{skill}</li>
-      {/each}
-    </ul>
-  </div>
-
-  <div class="skills-category">
-    <h4>Soft Skills</h4>
-    <ul class="skills-list">
-      {#each skills.softSkills as skill}
-        <li>{skill}</li>
-      {/each}
-    </ul>
-  </div>
+  {#each Object.entries(skills) as [category, skillList]}
+    <div class="skills-category">
+      <h4>{category}</h4>
+      <ul class="skills-list">
+        {#each skillList as skill}
+          <li>{skill}</li>
+        {/each}
+      </ul>
+    </div>
+  {/each}
 </div>
 
   
