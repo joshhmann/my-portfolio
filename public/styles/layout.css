@@ -1,0 +1,40 @@
+label {
+  display: block;
+  color: #e0e0e0;
+}
+
+input, button, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0.4em;
+  margin: 0 0 0.5em 0;
+  box-sizing: border-box;
+  background-color: #333;
+  border: 1px solid #777;
+  color: #e0e0e0;
+}
+
+input:disabled {
+  color: #999;
+  background-color: #222;
+}
+
+button {
+  color: #e0e0e0;
+  background-color: #333;
+  outline: none;
+  border: 1px solid #777;
+}
+
+button:disabled {
+  color: #999;
+  background-color: #222;
+}
+
+button:not(:disabled):active {
+  background-color: #444;
+}
+
+button:focus {
+  border-color: #aaa;
+}

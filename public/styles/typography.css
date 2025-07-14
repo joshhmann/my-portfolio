@@ -1,0 +1,18 @@
+h1, h2, h3, h4, h5, h6 {
+  font-size: 24px;
+  font-weight: normal;
+  color: #e0e0e0;
+}
+
+a {
+  color: rgb(129, 161, 193);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:visited {
+  color: rgb(102, 143, 183);
+}
