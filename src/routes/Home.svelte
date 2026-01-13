@@ -160,9 +160,14 @@ section {
   --card-hover: #f7fafc;
 }
 
-/* Hero Section */
+/* Hero Section with Glassmorphism */
 .home-container {
-  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-tertiary) 100%);
+  background: linear-gradient(135deg,
+    var(--bg-primary) 0%,
+    var(--bg-tertiary) 50%,
+    var(--bg-primary) 100%
+  );
+  position: relative;
   min-height: 90vh;
   display: flex;
   flex-direction: column;
@@ -170,6 +175,46 @@ section {
   align-items: center;
   text-align: center;
   padding: 60px 20px;
+  overflow: hidden;
+}
+
+/* Subtle gradient orbs for glassmorphism background */
+.home-container::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0, 173, 181, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+  animation: float 20s ease-in-out infinite;
+  z-index: 0;
+}
+
+.home-container::after {
+  content: '';
+  position: absolute;
+  bottom: -10%;
+  left: -5%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0, 173, 181, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+  animation: float 15s ease-in-out infinite reverse;
+  z-index: 0;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.home-container > * {
+  position: relative;
+  z-index: 1;
 }
 
 .profile-photo {
@@ -182,33 +227,39 @@ section {
   box-shadow: 0 8px 24px rgba(0, 173, 181, 0.2);
 }
 
+/* Swiss Typography - Bold and Minimal */
 .home-container h1 {
-  font-size: 48px;
-  font-weight: 700;
+  font-size: 56px;
+  font-weight: 800;
   color: var(--text-primary);
-  margin: 0 0 10px 0;
-  letter-spacing: -1px;
+  margin: 0 0 15px 0;
+  letter-spacing: -2px;
+  line-height: 1.1;
 }
 
 .title {
-  font-size: 24px;
+  font-size: 26px;
   color: var(--accent);
   font-weight: 600;
-  margin: 10px 0 5px 0;
+  margin: 15px 0 8px 0;
+  letter-spacing: -0.5px;
 }
 
 .location {
   font-size: 16px;
   color: var(--text-tertiary);
-  margin: 5px 0 20px 0;
+  margin: 8px 0 25px 0;
+  font-weight: 500;
+  letter-spacing: 0.5px;
 }
 
 .tagline {
-  font-size: 18px;
+  font-size: 19px;
   color: var(--text-secondary);
-  max-width: 800px;
-  line-height: 1.6;
-  margin: 20px auto 40px auto;
+  max-width: 850px;
+  line-height: 1.7;
+  margin: 25px auto 45px auto;
+  font-weight: 400;
 }
 
 .links-container {
@@ -239,49 +290,87 @@ section {
   box-shadow: 0 6px 20px rgba(0, 173, 181, 0.3);
 }
 
-/* Key Metrics Section */
+/* Key Metrics Section with Glassmorphism */
 .metrics-section {
-  background-color: var(--bg-secondary);
-  padding: 60px 20px;
+  background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+  padding: 80px 20px;
+  position: relative;
 }
 
 .metrics-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 30px;
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
+/* Glassmorphism effect on metric cards */
 .metric-card {
   text-align: center;
-  padding: 30px 20px;
-  background: var(--card-bg);
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  transition: all 0.3s ease;
+  padding: 40px 25px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+:global(body.light-mode) .metric-card {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+}
+
+.metric-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg,
+    rgba(0, 173, 181, 0.1) 0%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
 .metric-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--accent);
-  box-shadow: 0 8px 24px rgba(0, 173, 181, 0.15);
-  background: var(--card-hover);
+  transform: translateY(-8px) scale(1.02);
+  border-color: rgba(0, 173, 181, 0.4);
+  box-shadow: 0 16px 48px rgba(0, 173, 181, 0.2);
 }
 
+.metric-card:hover::before {
+  opacity: 1;
+}
+
+/* Swiss-Style Metrics - Large and Bold */
 .metric-number {
-  font-size: 42px;
-  font-weight: 700;
+  font-size: 52px;
+  font-weight: 800;
   color: var(--accent);
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   display: block;
+  letter-spacing: -1px;
+  position: relative;
+  z-index: 1;
 }
 
 .metric-label {
-  font-size: 14px;
+  font-size: 13px;
   color: var(--text-tertiary);
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
 }
 
 /* Work Experience Section */
@@ -291,24 +380,45 @@ section {
   padding: 80px 20px;
 }
 
+/* Swiss Section Headers - Large and Bold */
 .about-section h2,
 .projects-section h2,
 .skills-section-container h2,
 .contact-section h2 {
-  font-size: 36px;
+  font-size: 48px;
   color: var(--text-primary);
-  margin-bottom: 50px;
+  margin-bottom: 60px;
   text-align: center;
-  font-weight: 700;
+  font-weight: 800;
+  letter-spacing: -2px;
+  line-height: 1.2;
 }
 
+/* Experience Cards with Subtle Glassmorphism */
 .experience {
   margin-bottom: 60px;
-  background: var(--card-bg);
-  padding: 40px;
-  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 45px;
+  border-radius: 16px;
   border-left: 4px solid var(--accent);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+:global(body.light-mode) .experience {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.experience:hover {
+  transform: translateX(4px);
+  box-shadow: 0 8px 24px rgba(0, 173, 181, 0.15);
 }
 
 .experience-header {
@@ -401,18 +511,28 @@ section {
   margin: 0 auto;
 }
 
+/* Skills Cards with Glassmorphism */
 .skills-category {
-  background: var(--card-bg);
-  padding: 30px;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 35px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+:global(body.light-mode) .skills-category {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
 }
 
 .skills-category:hover {
-  border-color: var(--accent);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0, 173, 181, 0.1);
+  border-color: rgba(0, 173, 181, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 32px rgba(0, 173, 181, 0.15);
 }
 
 .skills-category h4 {
@@ -528,26 +648,37 @@ button[type="submit"]:disabled {
   border: 1px solid #ef4444;
 }
 
-/* Responsive Design */
+/* Responsive Design - Mobile Optimized */
 @media (max-width: 768px) {
   .home-container h1 {
-    font-size: 36px;
+    font-size: 42px;
+    letter-spacing: -1.5px;
   }
 
   .title {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .tagline {
-    font-size: 16px;
+    font-size: 17px;
+    line-height: 1.6;
   }
 
   .metrics-grid {
     grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .metric-card {
+    padding: 30px 20px;
   }
 
   .metric-number {
-    font-size: 32px;
+    font-size: 40px;
+  }
+
+  .metric-label {
+    font-size: 12px;
   }
 
   section {
@@ -558,11 +689,12 @@ button[type="submit"]:disabled {
   .projects-section h2,
   .skills-section-container h2,
   .contact-section h2 {
-    font-size: 28px;
+    font-size: 36px;
+    letter-spacing: -1.5px;
   }
 
   .experience {
-    padding: 25px;
+    padding: 30px;
   }
 
   .experience-header {
@@ -570,10 +702,19 @@ button[type="submit"]:disabled {
   }
 
   .theme-toggle {
-    top: 10px;
-    right: 10px;
-    width: 45px;
-    height: 45px;
+    top: 15px;
+    right: 15px;
+    width: 48px;
+    height: 48px;
+  }
+
+  /* Reduce blur on mobile for performance */
+  .metric-card,
+  .experience,
+  .skills-category,
+  .project-card {
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
   }
 }
 </style>
