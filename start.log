@@ -1,0 +1,5 @@
+
+> svelte-app@1.0.0 start
+> sirv public --no-clear
+
+sh: 1: sirv: not found

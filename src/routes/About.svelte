@@ -7,8 +7,6 @@
   ];
 
   const interests = ["DevOps automation", "Robotics", "Homelab for VMs", "Game servers"];
-
-  // For simplicity, projects are not detailed here. Consider linking to a Projects component or page.
 </script>
 
 <style>
@@ -54,6 +52,9 @@
   
   <h3>Starship Technologies - Service and Deployment Technician</h3>
   <p>Fairfax, VA / Mountain View, CA, 01/2018 - 06/2022</p>
+
+  <h2>Projects</h2>
+  <p>For a detailed look at my work, including personal and professional projects, please visit the <a href="/projects">Projects</a> page.</p>
   
   <h3>Skills</h3>
   <ul class="skills-list">
