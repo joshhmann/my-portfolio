@@ -10,24 +10,33 @@
 </script>
 
 <style>
+/* Project Cards with Glassmorphism */
 .project-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: var(--card-bg);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   color: var(--text-primary);
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   height: 100%;
 }
 
+:global(body.light-mode) .project-card {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
 .project-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--accent);
-  box-shadow: 0 8px 24px rgba(0, 173, 181, 0.15);
+  transform: translateY(-8px);
+  border-color: rgba(0, 173, 181, 0.4);
+  box-shadow: 0 16px 40px rgba(0, 173, 181, 0.2);
 }
 
 img {
