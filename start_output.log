@@ -1,0 +1,24 @@
+
+> svelte-app@1.0.0 start /app
+> sirv public --no-clear
+
+
+  Your application is ready~! 🚀
+
+  - Local:      http://localhost:8080
+  - Network:    Add `--host` to expose
+
+ LOGS
+
+  [07:52:20] 200 ─ 6.16ms ─ /
+  [07:52:20] 200 ─ 2.39ms ─ /global.css
+  [07:52:20] 200 ─ 3.08ms ─ /build/bundle.css
+  [07:52:20] 200 ─ 0.77ms ─ /styles/typography.css
+  [07:52:20] 200 ─ 1.72ms ─ /styles/base.css
+  [07:52:20] 200 ─ 5.32ms ─ /styles/layout.css
+  [07:52:20] 200 ─ 0.79ms ─ /build/bundle.js
+  [07:52:20] 200 ─ 0.87ms ─ /images/selfie.jpg
+  [07:52:20] 200 ─ 3.31ms ─ /images/project4.png
+  [07:52:20] 200 ─ 4.00ms ─ /images/csbutler.jpg
+  [07:52:20] 200 ─ 6.00ms ─ /images/signalapp.png
+  [07:52:20] 200 ─ 6.94ms ─ /images/pterodactyl.png

@@ -5,8 +5,8 @@
     active = !active;
   }
 
-  function scrollToSection(sectionId) {
-    document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+  function closeMenu() {
+    active = false;
   }
 </script>
 
@@ -30,6 +30,9 @@
   cursor: pointer;
   font-size: 24px;
   color: #ddd;
+  background: none;
+  border: none;
+  padding: 0;
 }
 
 /* Navigation links styling */
@@ -45,11 +48,13 @@ nav {
   font-weight: bold;
   border-bottom: 2px solid transparent;
   transition: border-color 0.3s, color 0.3s;
+  cursor: pointer;
 }
 
-.nav-link:hover {
+.nav-link:hover, .nav-link:focus {
   border-bottom: 2px solid #00adb5; /* Underline effect on hover */
   color: #00adb5; /* Change color on hover */
+  outline: none;
 }
 
 /* Mobile-friendly adjustments */
@@ -68,6 +73,7 @@ nav {
     left: 0;
     width: 100%;
     padding: 20px;
+    border-top: 1px solid #3a3f47;
   }
 
   nav.active {
@@ -77,18 +83,26 @@ nav {
   .nav-link {
     padding: 10px 0; /* Adjust padding for mobile view */
     text-align: center;
+    width: 100%;
+    display: block;
   }
 }
 
 </style>
 
 <div class="navbar">
-  <span class="menu-icon" on:click={toggleMenu}>&#9776;</span>
+  <button
+    class="menu-icon"
+    on:click={toggleMenu}
+    aria-label="Toggle navigation menu"
+    aria-expanded={active}
+  >
+    &#9776;
+  </button>
   <nav class:active={active}>
-    <a on:click={() => scrollToSection('home')} class="nav-link">Home</a>
-    <a on:click={() => scrollToSection('about')} class="nav-link">About Me</a>
-    <a on:click={() => scrollToSection('projects')} class="nav-link">Projects</a>
-    <a on:click={() => scrollToSection('contact')} class="nav-link">Contact</a>
+    <a href="#home" on:click={closeMenu} class="nav-link">Home</a>
+    <a href="#about" on:click={closeMenu} class="nav-link">About Me</a>
+    <a href="#projects" on:click={closeMenu} class="nav-link">Projects</a>
+    <a href="#contact" on:click={closeMenu} class="nav-link">Contact</a>
   </nav>
 </div>
-
