@@ -1,43 +1,60 @@
 export const skills = {
-  'Software Development': [
-    "Python", "JavaScript", "HTML", "CSS", "APIs", "Postman", "VSCode", "JSON"
+  'Core Systems': [
+    "Linux Administration",
+    "Bash Scripting",
+    "Python",
+    "Docker",
+    "Windows"
   ],
-  'Robotics & Automation': [
-    "Maintenance", "Diagnostics", "Troubleshooting", "Configuration"
+  'Hardware Integration': [
+    "VR/AR Headsets",
+    "Camera Systems",
+    "GPU Servers",
+    "Robotics Platforms",
+    "Cable Repair & Maintenance"
   ],
-  'Hardware & Networking': [
-    "Replacement", "Network Configuration", "Firewalls", "IP Networking", "WiFi Networking", "GPU Acceleration"
+  'Debugging & Operations': [
+    "Root-cause Analysis",
+    "Log Analysis",
+    "Hardware/Software Troubleshooting",
+    "System Diagnostics"
   ],
-  'System Administration': [
-    "Linux Administration", "Docker", "Unix/Linux OS configuration and optimization", "Bash"
+  'Leadership & Collaboration': [
+    "Team Leadership",
+    "SOPs Development",
+    "Training & Mentoring",
+    "Cross-functional Coordination",
+    "Daily Standups"
   ],
-  'DevOps & CI/CD': [
-    "GitHub", "Git", "Kubernetes", "Docker", "AWS", "Ansible", "Terraform", "GitHub Actions"
+  'Tools & Platforms': [
+    "Git",
+    "GitHub",
+    "Jira",
+    "Confluence",
+    "Slack APIs",
+    "Google Workspace"
   ],
-  'Cloud & SaaS': [
-    "Google Cloud", "Cloud Applications", "SaaS"
+  'Monitoring & Automation': [
+    "Prometheus",
+    "Grafana",
+    "Dashboard Design",
+    "CI/CD Pipelines",
+    "GitHub Actions"
   ],
-  'Project Management & Documentation': [
-    "Jira", "Confluence", "Account Management"
+  'Networking': [
+    "TCP/IP",
+    "Firewalls",
+    "Network Troubleshooting",
+    "Network Configuration"
   ],
-  'Data Management & Monitoring': [
-    "SQL", "GraphQL", "Prometheus", "Grafana"
-  ],
-  'Problem-Solving & Support': [
-    "Customer Support", "Team Collaboration", "24/7 on-call support", "Communication Skills"
-  ],
-  'Soft Skills': [
-    "Communication",
-    "Active Listening",
-    "Problem-Solving",
-    "Adaptability",
-    "Time Management",
-    "Team Collaboration",
-    "Attention to Detail",
-    "Empathy",
-    "Critical Thinking",
-    "Resilience"
-  ],
+  'Additional Technologies': [
+    "Kubernetes",
+    "Terraform",
+    "Ansible",
+    "AWS",
+    "GCP",
+    "SQL"
+  ]
 };
 
-export const interests = ["DevOps Automation", "Robotics", "Homelabs", "Game servers", "3D Printing", "Game Development"];
+export const interests = ["DevOps Automation", "Robotics", "Homelabs", "Game Servers", "3D Printing", "Hardware Tinkering"];
